@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic Tac Toe</title>
+  <style>
+    /* (You can skip reading this CSS part, it styles the page) */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #acb6e5);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .game-container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    .cell {
+      width: 100%;
+      aspect-ratio: 1;
+      font-size: 2rem;
+      font-weight: bold;
+      background: #f9f9f9;
+      border: 2px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .status-text {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      min-height: 1.5em;
+    }
+    .result-screen {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .result-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 300px;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+
+<body>
+  <!-- ✅ THIS is where the divs go -->
+
+  <div class="game-container">
+    <h1>Tic Tac Toe</h1>
+
+    <!-- ✅ THIS IS THE DIV YOU ASKED ABOUT -->
+    <div class="board" id="board"></div>
+
+    <p id="status" class="status-text">Turn: X</p>
+    <button id="resetBtn">Reset Game</button>
+  </div>
+
+  <!-- ✅ WIN / DRAW POP-UP SCREEN -->
+  <div id="result-screen" class="result-screen hidden">
+    <div class="result-content">
+      <h2 id="result-message">Player X wins!</h2>
+      <button id="newGameBtn">New Game</button>
+    </div>
+  </div>
+
+  <!-- ✅ LINK TO YOUR JAVASCRIPT FILE -->
+  <script src="script.js"></script>
+
+</body>
+</html>
